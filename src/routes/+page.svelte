@@ -1,37 +1,19 @@
-<script>
-	// import Counter from './components/Counter.svelte';
-	// import OpenRoom from "./OpenRoom.svelte";
-
-    let isModalOpen = false;
-
-    function openModal() {
-        isModalOpen = true;
-    }
-</script>
-
 <svelte:head>
 	<title>Home</title>
-	<meta name="description" content="Svelte demo app" />
+	<meta name="description" content="real-time, private text collaboration. join a secure room with a key and password to share and edit text instantly, with no server storage." />
 </svelte:head>
 
 <section>
-	<h1>
-		Welcome to your new SvelteKit app try editing <strong>src/routes/+page.svelte</strong>.
-	</h1>
-	<a href='/openroom' class="button">Open Room</a>
-	<!-- <MyModal isOpen={isModalOpen} /> -->
+	<!-- <p class="welcome">
+		welcome
+	</p> -->
+	<a href='/openroom' class="button">open room</a>
 </section>
 
 <style>
-	section {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		flex: 0.6;
-	}
-
-	h1 {
+	/* .welcome {
 		width: 100%;
-	}
+		text-align: center;
+		margin: 3rem;
+	} */
 </style>

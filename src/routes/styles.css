@@ -6,11 +6,12 @@
     font-family: 'Courier New', Courier, monospace;
     color: white; /* Text color */
     background-color: black; /* Background color */
+	text-transform: lowercase;
 }
 
 /* Textbox */
 .textbox {
-    border: 1px solid white; /* Border color */
+    border: 2px solid white; /* Border color */
     padding: 5px;
     background-color: transparent;
     color: white; /* Text color */
@@ -20,9 +21,17 @@
     background-color: #333; /* Darker shade for hover */
 }
 
+section {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	flex: 0.6;
+}
+
 /* Text Area */
 .textarea {
-    border: 1px solid white; /* Border color */
+    border: 2px solid white; /* Border color */
     padding: 5px;
     background-color: transparent;
     color: white; /* Text color */
@@ -32,7 +41,7 @@
 
 /* Button */
 .button {
-    border: 1px solid white; /* Border color */
+    border: 2px solid white; /* Border color */
     padding: 5px 10px;
     background-color: transparent;
     cursor: pointer;
@@ -49,7 +58,7 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    border: 1px solid white; /* Border color */
+    border: 2px solid white; /* Border color */
     padding: 20px;
     background-color: black; /* Background color */
     color: white; /* Text color */
