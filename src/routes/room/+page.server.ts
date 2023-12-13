@@ -1,18 +1,14 @@
-import { getRoomName } from '$lib/server/session';
-import { getRoom } from '$lib/server/database';
-import type { Room } from '$lib/room.js';
+import { getRoomByName, getRoomBySessionId } from '$lib/server/database';
+import type { Room, Session } from '../../db/schema.js';
 
 export async function load({ url }) {
     const query = url.searchParams;
     const sessionId = query.get('sid');
 
     if (sessionId !== undefined && sessionId!.length > 0) {
-        const name = getRoomName(sessionId as string);
-        const room = getRoom(name) as Room;
-
-        if (room !== undefined) {
-            console.log(`room name: ${room.name} | created: ${room.created}`);
-
+        const room = await getRoomBySessionId(Number(sessionId));
+        if (room) {
+            // console.log(`room name: ${room.name} | created: ${room.created}`);
             return {
                 room: {
                     name: room.name,
@@ -21,10 +17,7 @@ export async function load({ url }) {
             };
         }
         else {
-            // error
+            console.error('something went wrong');
         }
     }
-
-
-
 }

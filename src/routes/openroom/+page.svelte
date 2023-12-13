@@ -1,11 +1,3 @@
-<!-- <script lang="ts">
-	// export let isOpen = false;
-
-	function go() {
-		alert("you clicked the button");
-	}
-</script> -->
-
 <section>
 	<form method="POST">
 		<label>
