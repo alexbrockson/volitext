@@ -6,8 +6,8 @@ import type { Room, NewRoom, Session, NewSession } from "../../db/schema";
 
 const connection = connect({ host: process.env["DATABASE_HOST"], username: process.env["DATABASE_USERNAME"], password: process.env["DATABASE_PASSWORD"] });
 const db = drizzle(connection);
-await db.delete(Rooms);
-await db.delete(Sessions);
+// await db.delete(Rooms);
+// await db.delete(Sessions);
 
 export async function enterRoom(name: string, password: string): Promise<Room | undefined> {
 

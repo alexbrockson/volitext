@@ -8,6 +8,6 @@
 			password:
 			<input name="password" type="password" required>
 		</label>
-		<button id="btnGo">go</button>
+		<button id="btnGo" class="vBtn">go</button>
 	</form>
 </section>

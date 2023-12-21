@@ -24,7 +24,9 @@
   "type": "module",
   "dependencies": {
     "@planetscale/database": "^1.11.0",
+    "@types/websocket": "^1.0.10",
     "dotenv": "^16.3.1",
-    "drizzle-orm": "^0.29.1"
+    "drizzle-orm": "^0.29.1",
+    "websocket": "^1.0.34"
   }
 }
