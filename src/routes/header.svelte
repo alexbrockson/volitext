@@ -1,22 +1,29 @@
 <script>
-	import { page } from '$app/stores';
-	// import logo from '$lib/images/svelte-logo.svg';
-	import github from '$lib/images/github.svg';
+	import { page } from "$app/stores";
+	import github from "$lib/images/github.svg";
+	import volitext from "$lib/images/volitext.svg";
 </script>
 
 <header>
 	<div class="corner">
-		<!-- <a href="https://kit.svelte.dev">
-			<img src={logo} alt="SvelteKit" />
-		</a> -->
+		<a
+			href="/"
+			aria-current={$page.url.pathname === "/" ? "page" : undefined}
+		>
+			<img src={volitext} alt="volitext" />
+		</a>
 	</div>
 
 	<nav>
 		<ul>
-			<li aria-current={$page.url.pathname === '/' ? 'page' : undefined}>
+			<!-- <li aria-current={$page.url.pathname === '/' ? 'page' : undefined}>
 				<a href="/">home</a>
-			</li>
-			<li aria-current={$page.url.pathname === '/about' ? 'page' : undefined}>
+			</li> -->
+			<li
+				aria-current={$page.url.pathname === "/about"
+					? "page"
+					: undefined}
+			>
 				<a href="/about">about</a>
 			</li>
 			<!-- <li aria-current={$page.url.pathname.startsWith('/sverdle') ? 'page' : undefined}>
@@ -27,7 +34,7 @@
 
 	<div class="corner">
 		<a href="https://github.com/alexbrockson/volitext">
-			<img src={github} alt="GitHub" />
+			<img src={github} alt="github" />
 		</a>
 	</div>
 </header>
@@ -36,6 +43,7 @@
 	header {
 		display: flex;
 		justify-content: space-between;
+		order: -1;
 	}
 
 	.corner {
@@ -81,9 +89,9 @@
 		height: 100%;
 	}
 
-	li[aria-current='page']::before {
+	li[aria-current="page"]::before {
 		--size: 6px;
-		content: '';
+		content: "";
 		width: 0;
 		height: 0;
 		position: absolute;

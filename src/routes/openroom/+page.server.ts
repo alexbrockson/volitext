@@ -1,6 +1,6 @@
 import type { Actions } from './$types';
 import { enterRoom, createSession } from '$lib/server/database';
-import { redirect } from '@sveltejs/kit';
+import { redirect, fail } from '@sveltejs/kit';
 import type { Room } from '../../db/schema';
 
 export const actions = {
@@ -10,8 +10,13 @@ export const actions = {
         const password = data.get('password');
         if (roomName && password) {
             const room = await enterRoom(roomName as string, password as string) as Room;
-            const sessionId = await createSession(room.id);
-            throw redirect(303, './room?sid=' + sessionId);
+            if (room) {
+                const sessionId = await createSession(room.id);
+                throw redirect(303, './room?sid=' + sessionId);
+            }
+            else {
+                return fail(400, { room: roomName, incorrect: true });
+            }
         }
         return { success: true };
     }

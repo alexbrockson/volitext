@@ -1,18 +1,16 @@
 <script>
-	import Header from './header.svelte';
-	import './styles.css';
+	import Header from "./header.svelte";
+	import "../lib/styles.css";
 </script>
 
 <div class="app">
-	<Header />
-
 	<main>
 		<slot />
 	</main>
-
-	<footer>
-		<!-- <p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p> -->
-	</footer>
+	<Header />
+	<!-- <footer>
+		<p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p>
+	</footer> -->
 </div>
 
 <style>
@@ -33,7 +31,7 @@
 		box-sizing: border-box;
 	}
 
-	footer {
+	/* footer {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
@@ -49,5 +47,5 @@
 		footer {
 			padding: 12px 0;
 		}
-	}
+	} */
 </style>
